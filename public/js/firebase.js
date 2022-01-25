@@ -1,7 +1,7 @@
 var firebaseConfig = {
-  apiKey: "AIzaSyDS4TxNhPNXEGdVFLzGhVAo4yriJ5Ws3ww",
-  authDomain: "dashpilot-c0247.firebaseapp.com",
-  projectId: "dashpilot-c0247"
+  apiKey: "AIzaSyBfcGrhulsRnw5TjV_HQ2gwiohOxMAXs4g",
+  authDomain: "blognote-5c8dc.firebaseapp.com",
+  projectId: "blognote-5c8dc"
 };
 firebase.initializeApp(firebaseConfig);
 
