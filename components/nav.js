@@ -11,7 +11,7 @@ const template = `
       <div class="navbar-item">
         <div class="buttons">
           <a class="button is-secondary mr" onclick="login()">
-            Docs
+            Sign In
           </a>
         </div>
       </div>
