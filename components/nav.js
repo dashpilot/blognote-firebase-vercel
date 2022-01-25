@@ -10,7 +10,7 @@ const template = `
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
-          <a class="button is-secondary mr" href="https://github.com/dashpilot/vite-alpinejs" target="_blank">
+          <a class="button is-secondary mr" onclick="login()">
             Docs
           </a>
         </div>
