@@ -13,7 +13,7 @@ document.addEventListener('alpine:init', () => {
   })
 })
 
-function setData(service, path, type, content) {
+async function setData(service, path, type, content) {
   let opts = {};
   opts.path = path;
   opts.type = type;
@@ -21,8 +21,10 @@ function setData(service, path, type, content) {
   call_api(service + '/set-data', opts).then(function(res) {
     if (res.ok) {
       console.log(res.msg);
+      return true;
     } else {
       console.log('An error occured' + res);
+      return false;
     }
   });
 }
