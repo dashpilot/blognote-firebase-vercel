@@ -79,7 +79,7 @@ export default () => {
     save() {
       this.loading = true;
       var myapp = this;
-      call_api('github/set-data', 'data.json', 'json', $store.items).then(function(res) {
+      call_api('github/set-data', 'data.json', 'json', myapp.$store.items).then(function(res) {
         if (res.ok) {
           console.log(res.msg);
           myapp.loading = false;
