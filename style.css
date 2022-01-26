@@ -1,11 +1,20 @@
 @import url("https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css");
 
+html, body{
+  height: 100%;
+}
+
+body{
+  background-color: #F8F8F8;
+}
+
+
 #app{
   font-size: 18px;
   line-height: 150%;
 }
 
-h1, h2{
+h1, h2, h3{
   font-weight: 600;
   font-size: 45px;
   line-height: 110%;
@@ -19,7 +28,54 @@ h2{
   font-size: 2rem;
 }
 
+h3{
+  font-size: 1.5rem;
+}
+
 .container{
-  max-width: 640px !important;
+  max-width: 1024px !important;
   margin: 60px auto;
+}
+
+.box{
+  padding: 0;
+  min-height: 450px;
+}
+
+#main{
+  padding: 30px;
+  padding-right: 40px;
+  background-color: white;
+}
+
+.side-tab{
+  display: block;
+  padding: 15px 20px;
+  border-bottom: 1px solid #DDD;
+  color: black;
+}
+
+.side-tab:hover{
+  color: white;
+  background-color: var(--bg-clr) !important;
+}
+
+.is-one-quarter{
+  border-right: 1px solid #DDD;
+    min-height: 450px;
+    padding-right: 0;
+}
+
+.is-one-quarter:first-child{
+padding-top: 0;
+}
+
+
+textarea{
+  min-height: 200px;
+  resize: none;
+}
+
+.input{
+  margin-bottom: 15px;
 }

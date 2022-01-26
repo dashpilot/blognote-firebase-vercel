@@ -1,6 +1,6 @@
 const template = `
 <div x-data="navApp()">
-<nav class="navbar brdr-b" role="navigation" aria-label="main navigation">
+<nav class="navbar is-info" role="navigation" aria-label="main navigation">
   <div id="navbarBasicExample" class="navbar-menu">
     <div class="navbar-brand">
       <a class="navbar-item">

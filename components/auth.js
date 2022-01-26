@@ -1,11 +1,11 @@
 const template = `
 <div x-data="authApp()">
-  <template x-if="!$store.user.loggedIn">
+  <template x-if="!$store.app.loggedIn">
     <a class="button is-secondary mr" @click="login()" id="signIn">
       Sign In
     </a>
   </template>
-  <template x-if="$store.user.loggedIn">
+  <template x-if="$store.app.loggedIn">
     <a class="button is-secondary mr" @click="logout()">
       Sign Out
     </a>
@@ -26,7 +26,8 @@ export default () => {
           user.getIdToken().then(function(idToken) {
             //console.log(idToken); // It shows the Firebase token now
             console.log('Signed in');
-            myapp.$store.user.loggedIn = true;
+            myapp.$store.app.loggedIn = true;
+
           });
 
         } else {
@@ -52,7 +53,8 @@ export default () => {
           var user = result.user;
           console.log('Signed in');
 
-          myapp.$store.user.loggedIn = true;
+          myapp.$store.app.loggedIn = true;
+
 
         }).catch((error) => {
           console.log(error);
@@ -65,7 +67,7 @@ export default () => {
       firebase.auth().signOut().then(() => {
         // Sign-out successful.
         console.log('Signed out');
-        myapp.$store.user.loggedIn = false;
+        myapp.$store.app.loggedIn = false;
       }).catch((error) => {
         console.log(error);
       });

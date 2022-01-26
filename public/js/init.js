@@ -8,8 +8,20 @@ firebase.initializeApp(firebaseConfig);
 var provider = new firebase.auth.GoogleAuthProvider();
 
 document.addEventListener('alpine:init', () => {
-  Alpine.store('user', {
+  Alpine.store('items', [{
+      id: "item-1",
+      title: "This is my first title",
+      body: "Lorem ipsum dolor site amet"
+    },
+    {
+      id: "item-2",
+      title: "This is my second title",
+      body: "Lorem ipsum dolor site amet depictum dolor site."
+    }
+  ])
+  Alpine.store('app', {
     loggedIn: false,
+    curItem: {},
   })
 })
 

@@ -15,4 +15,5 @@ import auth from './components/auth.js';
 window.authApp = auth;
 document.querySelector('#authContainer').innerHTML = authApp().template;
 
+
 Alpine.start()
