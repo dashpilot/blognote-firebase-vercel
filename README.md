@@ -1,61 +1,47 @@
-# Vite Alpine.js
+# BlogNote
 
-<img src="/public/img/vite-alpine.png" height="150" />
+Blognote is a micro-blogging platform than saves your data to S3 or Github straight from your front-end app using Vercel functions!
 
-Starter template to use Vite with Alpinejs
+This project provides a unified api to communicate with any S3-compatible storage (e.g. Amazon S3, Digitalocean Spaces, Scaleway etc) or a Github repo. It currently uses Firebase Auth for authentication but can easily be adapted to your preferred auth system
 
-Allows you to create modular Alpine.js 3 components using ES Modules and bundle then using Vite.js
+# How To
 
-## Demo
-https://vite-alpinejs.vercel.app 
+1.  Clone this repo and deploy to Vercel
+2.  Set the following environment variables in Vercel:
 
-## How to install?
+### For use with S3-compatible storage:
 
-Click "use this template" or run: `npx degit https://github.com/dashpilot/vite-alpinejs`
+S3_ENDPOINT: the endpoint of your S3-compatible storage (e.g. eu-central-1.linodeobjects.com)\\
+S3_BUCKET: your bucket\\
+S3_KEY: your S3 key\\
+S3_SECRET: your S3 secret
 
-then run `npm install` and `npm run dev`
+### For use with a Github repo
 
-to bundle: `npm run build` > output will be in the `dist` folder
+GH_OWNER: Github username\\
+GH_REPO: Github repo\\
+GH_TOKEN: Github token
 
-## Example module
+3.  Set the Firebase config in public/js/init.js to match your Firebase account
 
-./modules/card.js:
+# Api
 
-    /* define the template inside the module */
+### Saving Data
 
-    const template = `
-    <div class="container" x-data="cardApp()">
-      <div class="box">
-        <h1>Welcome, <span x-text="name"></span></h1>
-        <label class="label mt">Your name:</label>
-        <input class="input" type="text" x-model="name">
-        <button class="button is-info mt" @click="test">Test</button>
-      </div>
-    </div>
-    `
+To save data from your front-end app, just call:
 
-    export default () => {
-      return {
-        template: template, // add the template to the component's data
-        name: '',
-        init() {
-          console.log('card component loaded');
-        },
-        test() {
-          alert('Hi ' + this.name)
-        }
-      }
-    }
+`setData(service, path, type, content)`
 
-In main.js, import the module and add the template to the page:
+`service`: either 's3' or 'github', depending on which backend storage you want to use\\
+`path`: path to the file you want to save, e.g. `data.json` or `myimage.jpg`\\
+`type`: type of data, e.g. `json` or `img`\\
+`content`: the data
 
-    import card from './components/card.js';
-    window.cardApp = card;
-    document.querySelector('#app').innerHTML += cardApp().template;
+### Fetching data
 
-## Press the :star: button
+To fetch data, just call:
 
-Don't forget to press the :star: button to let me know I should continue improving this project.
+`getData(service, path)`
 
-## Preview
-<img src="/public/img/preview.jpg" />
+`service`: either 's3' or 'github', depending on which backend storage you want to use\\
+`path`: path to the file you want to save, e.g. `data.json` or `myimage.jpg`\\
