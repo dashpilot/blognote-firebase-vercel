@@ -54,8 +54,6 @@ const template = `
   </template>
 
 
-
-
     </div>
 
     </div>
@@ -81,7 +79,7 @@ export default () => {
     save() {
       this.loading = true;
       var myapp = this;
-      call_api('github/set-data', 'test4.md', 'text', this.name).then(function(res) {
+      call_api('github/set-data', 'data.json', 'json', this.entries).then(function(res) {
         if (res.ok) {
           console.log(res.msg);
           myapp.loading = false;

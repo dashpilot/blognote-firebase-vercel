@@ -39,7 +39,7 @@ h3{
 
 .box{
   padding: 0;
-  min-height: 450px;
+  min-height: 500px;
 }
 
 #main{
@@ -62,7 +62,7 @@ h3{
 
 .is-one-quarter{
   border-right: 1px solid #DDD;
-    min-height: 450px;
+    min-height: 500px;
     padding-right: 0;
 }
 
