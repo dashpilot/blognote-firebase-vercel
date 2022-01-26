@@ -72,6 +72,20 @@ export default () => {
     loading: false,
     init() {
       console.log('card component loaded');
+
+
+      var myapp = this;
+      call_api('github/get-data', 'data.json').then(function(res) {
+        if (res.ok) {
+          console.log(res.msg);
+          myapp.$store.items = res.msg;
+          return true;
+        } else {
+          console.log('An error occured' + res);
+          return false;
+        }
+      });
+
     },
     relay() {
       document.querySelector('#signIn').click();
@@ -91,11 +105,6 @@ export default () => {
         }
       });
 
-      /*
-            setData('github', 'test2.md', 'text', this.name).then(function() {
-              alert('saved!');
-            })
-            */
     }
   }
 }
