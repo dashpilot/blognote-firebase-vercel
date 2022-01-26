@@ -9,10 +9,8 @@ const template = `
     </div>
     <div class="navbar-end">
       <div class="navbar-item">
-        <div class="buttons">
-          <a class="button is-secondary mr" onclick="login()">
-            Sign In
-          </a>
+        <div class="buttons" id="authContainer">
+
         </div>
       </div>
     </div>

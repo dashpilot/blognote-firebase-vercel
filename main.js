@@ -11,4 +11,8 @@ import card from './components/card.js';
 window.cardApp = card;
 document.querySelector('#app').innerHTML += cardApp().template;
 
+import auth from './components/auth.js';
+window.authApp = auth;
+document.querySelector('#authContainer').innerHTML = authApp().template;
+
 Alpine.start()
