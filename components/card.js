@@ -20,7 +20,11 @@ const template = `
     <input class="input w-50" type="text" x-model="name">
 
     <div class="mt-20 mb-50">
-    <button class="button is-link is-medium mt-20 mr" @click="save()">Save</button>
+    <button class="button is-link is-medium mt-20 mr" @click="save()">
+    <template x-if="loading">
+      <i class="fas fa-spinner fa-spin mr"></i>
+    </template>
+    Save</button>
     </div>
   </div>
 </template>
@@ -33,6 +37,7 @@ export default () => {
   return {
     template: template,
     name: '',
+    loading: false,
     init() {
       console.log('card component loaded');
     },
@@ -40,15 +45,16 @@ export default () => {
       document.querySelector('#signIn').click();
     },
     save() {
-
-
+      this.loading: true;
+      var myapp = this;
       call_api('github/set-data', 'test4.md', 'text', this.name).then(function(res) {
         if (res.ok) {
           console.log(res.msg);
-          alert('saved');
+          myapp.loading = false;
           return true;
         } else {
           console.log('An error occured' + res);
+          myapp.loading = false;
           return false;
         }
       });
