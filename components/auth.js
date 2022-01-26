@@ -28,6 +28,8 @@ export default () => {
             console.log('Signed in');
             myapp.$store.app.loggedIn = true;
 
+            myapp.getData();
+
           });
 
         } else {
@@ -55,6 +57,7 @@ export default () => {
 
           myapp.$store.app.loggedIn = true;
 
+          myapp.getData();
 
         }).catch((error) => {
           console.log(error);
@@ -72,6 +75,19 @@ export default () => {
         console.log(error);
       });
 
+    },
+    getData() {
+      var myapp = this;
+      call_api('github/get-data', 'data.json').then(function(res) {
+        if (res.ok) {
+          console.log(res.msg);
+          myapp.$store.items = res.msg;
+          return true;
+        } else {
+          console.log('An error occured' + res);
+          return false;
+        }
+      });
     }
   }
 }
