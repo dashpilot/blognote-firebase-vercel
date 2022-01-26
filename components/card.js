@@ -40,7 +40,7 @@ export default () => {
       document.querySelector('#signIn').click();
     },
     save() {
-      setData('github', 'test.md', 'text', this.name)
+      setData('github', 'test2.md', 'text', this.name)
     }
   }
 }
