@@ -40,9 +40,27 @@ export default () => {
       document.querySelector('#signIn').click();
     },
     save() {
-      setData('github', 'test2.md', 'text', this.name).then(function() {
-        alert('saved!');
-      })
+
+      let opts = {};
+      opts.path = 'test3.md';
+      opts.type = 'text';
+      opts.content = this.name;
+      call_api('github/set-data', opts).then(function(res) {
+        if (res.ok) {
+          console.log(res.msg);
+          alert('saved');
+          return true;
+        } else {
+          console.log('An error occured' + res);
+          return false;
+        }
+      });
+
+      /*
+            setData('github', 'test2.md', 'text', this.name).then(function() {
+              alert('saved!');
+            })
+            */
     }
   }
 }
