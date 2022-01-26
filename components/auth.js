@@ -34,6 +34,10 @@ export default () => {
 
         } else {
           console.log('User not signed in');
+
+          myapp.$store.app.bootup = false;
+          document.querySelector('#editor').style.opacity = 1;
+
         }
       });
 
@@ -82,9 +86,14 @@ export default () => {
         if (res.ok) {
           console.log(res.msg);
           myapp.$store.items = JSON.parse(res.msg);
+          myapp.$store.app.bootup = false;
+          document.querySelector('#editor').style.opacity = 1;
+
           return true;
         } else {
           console.log('An error occured' + res);
+          myapp.$store.app.bootup = false;
+          document.querySelector('#editor').style.opacity = 1;
           return false;
         }
       });

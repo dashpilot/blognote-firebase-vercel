@@ -1,6 +1,11 @@
 const template = `
 <div class="container" x-data="cardApp()">
-  <div class="box">
+
+<template x-if="$store.app.bootup">
+<div class="bootup text-center">Loading...</div>
+</template>
+
+  <div class="box" id="editor">
 <template x-if="!$store.app.loggedIn">
 <div class="text-center p-50">
 <h2>BlogNote</h2>
@@ -72,6 +77,14 @@ export default () => {
     loading: false,
     init() {
       console.log('card component loaded');
+
+      /*
+            var myapp = this;
+            setTimeout(function() {
+              myapp.bootup = false;
+              document.querySelector('#editor').style.opacity = 1;
+            }, 2000)
+            */
 
     },
     relay() {

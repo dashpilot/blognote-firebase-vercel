@@ -20,6 +20,7 @@ document.addEventListener('alpine:init', () => {
     }
   ])
   Alpine.store('app', {
+    bootup: true,
     loggedIn: false,
     curItem: {},
   })
