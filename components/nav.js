@@ -4,7 +4,7 @@ const template = `
   <div id="navbarBasicExample" class="navbar-menu">
     <div class="navbar-brand">
       <a class="navbar-item">
-        <strong class="ml">Vite Alpinejs Starter</strong>
+        <strong class="ml">BlogNote</strong>
       </a>
     </div>
     <div class="navbar-end">

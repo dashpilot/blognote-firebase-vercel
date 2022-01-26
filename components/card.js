@@ -19,10 +19,8 @@ const template = `
     <label class="label mt-25">Your name:</label>
     <input class="input w-50" type="text" x-model="name">
 
-    <p class="tagline mt-20" x-text="name"></p>
     <div class="mt-20 mb-50">
-    <button class="button is-link is-medium mt-20 mr" @click="test">Alert</button>
-    <a class="button is-medium mt-20 ml" href="https://github.com/dashpilot/vite-alpinejs" target="_blank">Docs</a>
+    <button class="button is-link is-medium mt-20 mr" @click="save()">Save</button>
     </div>
   </div>
 </template>
@@ -40,6 +38,9 @@ export default () => {
     },
     relay() {
       document.querySelector('#signIn').click();
+    },
+    save() {
+      setData('github', 'test.md', 'text', this.name)
     }
   }
 }

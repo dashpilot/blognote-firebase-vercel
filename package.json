@@ -10,6 +10,11 @@
     "vite": "^2.7.2"
   },
   "dependencies": {
-    "alpinejs": "^3.8.1"
+    "alpinejs": "^3.8.1",
+    "@octokit/rest": "^18.0.12",
+    "aws-sdk": "^2.824.0",
+    "http-status-codes": "^2.1.4",
+    "jsonwebtoken": "^8.5.1",
+    "node-fetch": "^2.6.1"
   }
 }
