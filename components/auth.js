@@ -81,7 +81,7 @@ export default () => {
       call_api('github/get-data', 'data.json').then(function(res) {
         if (res.ok) {
           console.log(res.msg);
-          myapp.$store.items = res.msg;
+          myapp.$store.items = JSON.parse(res.msg);
           return true;
         } else {
           console.log('An error occured' + res);
