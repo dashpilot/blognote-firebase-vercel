@@ -13,6 +13,7 @@ document.addEventListener('alpine:init', () => {
   })
 })
 
+/*
 function setData(service, path, type, content) {
   let opts = {};
   opts.path = path;
@@ -38,8 +39,18 @@ function getData(service, path) {
     }
   });
 }
+*/
 
-async function call_api(route, mydata) {
+async function call_api(route, path, type = '', content = '') {
+
+  var mydata = {};
+  mydata.path = path;
+  if (type !== '') {
+    mydata.type = type;
+  }
+  if (type !== '') {
+    mydata.content = content;
+  }
 
   try {
     const idToken = await firebase.auth().currentUser.getIdToken(true);

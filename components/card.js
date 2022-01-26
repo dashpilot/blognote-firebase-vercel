@@ -41,11 +41,8 @@ export default () => {
     },
     save() {
 
-      let opts = {};
-      opts.path = 'test3.md';
-      opts.type = 'text';
-      opts.content = this.name;
-      call_api('github/set-data', opts).then(function(res) {
+
+      call_api('github/set-data', 'test4.md', 'text', this.name).then(function(res) {
         if (res.ok) {
           console.log(res.msg);
           alert('saved');
