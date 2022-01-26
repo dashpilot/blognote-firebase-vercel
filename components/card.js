@@ -45,7 +45,7 @@ export default () => {
       document.querySelector('#signIn').click();
     },
     save() {
-      this.loading: true;
+      this.loading = true;
       var myapp = this;
       call_api('github/set-data', 'test4.md', 'text', this.name).then(function(res) {
         if (res.ok) {
