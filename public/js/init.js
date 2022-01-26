@@ -13,34 +13,6 @@ document.addEventListener('alpine:init', () => {
   })
 })
 
-/*
-function setData(service, path, type, content) {
-  let opts = {};
-  opts.path = path;
-  opts.type = type;
-  opts.content = content;
-  call_api(service + '/set-data', opts).then(function(res) {
-    if (res.ok) {
-      console.log(res.msg);
-    } else {
-      console.log('An error occured' + res);
-    }
-  });
-}
-
-function getData(service, path) {
-  let opts = {};
-  opts.path = path;
-  call_api(service + '/get-data', opts).then(function(res) {
-    if (res.ok) {
-      console.log(res.msg);
-    } else {
-      console.log('An error occured: ' + res);
-    }
-  });
-}
-*/
-
 async function call_api(route, path, type = '', content = '') {
 
   var mydata = {};
